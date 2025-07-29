@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DHARSHINI PRIYA R D |  Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: #0c0c0c;
+      color: #f0f0f0;
+      overflow-x: hidden;
+    }
+    header, section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #fbd85d;
+    }
+    .about, .education, .projects, .skills, .languages, .contact {
+      max-width: 1000px;
+      margin: auto;
+    }
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .about-text {
+      flex: 1;
+      text-align: left;
+      padding: 20px;
+    }
+    .about-img {
+      flex: 1;
+      text-align: right;
+    }
+    .about-img img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px solid #fbd85d;
+      object-fit: cover;
+    }
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 30px;
+    }
+    .card {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #fbd85d;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .bars {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .bar, .code-bar {
+      width: 48%;
+      margin: 15px 0;
+    }
+    .bar p, .code-bar p {
+      margin-bottom: 5px;
+    }
+    .progress, .code-progress {
+      background: #333;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 20px;
+    }
+    .progress-fill, .code-fill {
+      height: 100%;
+      background: #fbd85d;
+      width: 0;
+      transition: width 2s ease-out;
+    }
+    footer {
+      padding: 40px;
+      background: #111;
+      color: #aaa;
+      text-align: center;
+    }
+    nav.sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 60px;
+      background: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+    }
+    nav.sidebar a {
+      margin: 15px 0;
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    nav.sidebar a.active {
+      color: #fbd85d;
+    }
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #0c0c0c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    #preloader span {
+      font-size: 24px;
+      color: #fbd85d;
+    }
+    .resume-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #fbd85d;
+      color: #0c0c0c;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(130deg, #1a1a1a, #202020, #262626);
+  background-size: 600% 600%;
+  animation: gradientAnimation 20s ease infinite;
+  filter: brightness(0.9) contrast(1.2) blur(2px);
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.2rem;
+}
+
+.contact-item i {
+  color: #fbd85d;
+  font-size: 1.5rem;
+}
+
+.contact-item a {
+  color: #f0f0f0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #fbd85d;
+}
+@media (min-width: 768px) {
+  .contact-container {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <div id="preloader"><span>Loading Portfolio...</span></div>
+  <nav class="sidebar">
+    <a href="#about">A</a>
+    <a href="#education">E</a>
+    <a href="#projects">P</a>
+    <a href="#skills">S</a>
+    <a href="#languages">L</a>
+    <a href="#contact">C</a>
+  </nav>
+
+  <header>
+    <h1 data-aos="fade-down">DHARSHINI PRIYA R D</h1>
+  </header>
+
+  <section id="about" class="about" data-aos="fade-up">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>Aspiring engineering professional with a passion for cybersecurity and community service, seeking opportunities to contribute to 
+secure technology development while promoting digital awareness and social responsibility. While actively contributing to societal 
+growth through community engagement and leadership experiences gained through NSS."</p>
+        <a href="resume.pdf" class="resume-btn" download>Download Resume</a>
+      </div>
+      <div class="about-img">
+        <img src="img-2.jpg" alt="Logeshwara">
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="education" data-aos="fade-right">
+    <h2>Education</h2>
+    <p>Bachelor of Engineering in Cyber Security | Dr. Mahalingam College of Engineering and Technology, <br>Pollachi | 3rd Year | 
+8.2 CGPA <br>
+HSC | Ponnu Matric Hr. Sec. School, Dharapuram 
+March,2023 | 84,1% 
+<br>
+SSLC | Ponnu Matric Hr. Sec. School, Dharapuram</p>
+  </section>
+
+<section id="skills" class="skills" data-aos="zoom-in">
+  <h2>Skills</h2>
+  <div class="card-container">
+    <div class="card" data-aos="fade-up">Nmap</div>
+    <div class="card" data-aos="fade-up" data-aos-delay="100">Wireshark</div>
+    <div class="card" data-aos="fade-up" data-aos-delay="200">Burp Suite</div>
+    <div class="card" data-aos="fade-up" data-aos-delay="300">Metasploit</div>
+    <div class="card" data-aos="fade-up" data-aos-delay="400">crypTool</div>
+    <div class="card" data-aos="fade-up" data-aos-delay="500">Figma</div>
+    <div class="card" data-aos="fade-up" data-aos-delay="600">MS Word</div>
+    <div class="card" data-aos="fade-up" data-aos-delay="700">MS Excel</div>
+    <div class="card" data-aos="fade-up" data-aos-delay="800">Google sheet</div>
+    <div class="card" data-aos="fade-up" data-aos-delay="900">Communication</div>
+    <div class="card" data-aos="fade-up" data-aos-delay="1000">Problem-Solving</div>
+    <div class="card" data-aos="fade-up" data-aos-delay="1100">Team Collaboration</div>
+  </div>
+</section>
+
+
+  <section id="projects" class="projects" data-aos="zoom-in">
+    <h2>Projects</h2>
+    <div class="card-container">
+      <div class="card" data-aos="zoom-in" data-aos-delay="200"><h3>Learning Assistant Chatbot</h3>
+<br>
+<p>• Accepts user queries via text or voice input <br>
+• Processes using Machine Learning and NLP models to deliver relevant content <br>
+• Tracks user learning behavior and suggests personalized topics <br>
+• Integrates gamification elements like badges and streaks 
+</p>
+</div>
+
+      <div class="card" data-aos="zoom-in" data-aos-delay="200"><h3>Keylogger Analyse </h3>
+<br>
+<p>• Simulated various injection attacks (e.g., SQL Injection, XSS) to understand common vulnerabilities in web applications. <br>
+• Encoded and decoded injected payloads using formats like Base64, URL encoding, and Hex to test bypassing input filters. <br>
+• Analyzed the behavior of encoded payloads in different environments to evaluate their impact on application security. <br>
+• Developed scripts and tools for automated injection testing, payload transformation, and security response analysis.
+</p>
+</div>
+    </div>
+  </section>
+
+
+  <section id="projects" class="projects" data-aos="zoom-in">
+    <h2>Internships</h2>
+    <div class="card-container">
+      <div class="card" data-aos="zoom-in" data-aos-delay="200"><h3>Hackup Technology- Cyber Security Intern [Coimbatore] </h3>
+<br>
+<p>• Conducted port scanning and vulnerability assessments using Nmap and Wireshark. <br>
+• Created Python scripts for log automation. <br>
+• Documented system configurations and firewall rules.
+</p>
+</div>
+  </section>
+
+
+  <section id="projects" class="projects" data-aos="zoom-in">
+    <h2>Experience </h2>
+    <div class="card-container">
+      <div class="card" data-aos="zoom-in" data-aos-delay="200"><h3>ENCRYPTIX  </h3>
+<br>
+<p>Documentation executive member in department association – ENCRYPTIX  
+</p>
+</div>
+  </section>
+
+
+
+
+
+  <section id="languages" class="languages" data-aos="fade-up">
+    <h2>Proficiency</h2>
+    <div class="bars">
+      <div class="bar">
+        <p>English</p>
+        <div class="progress"><div class="progress-fill" data-width="90%"></div></div>
+        <p>Tamil</p>
+        <div class="progress"><div class="progress-fill" data-width="100%"></div></div>
+      </div>
+      <div class="code-bar">
+        <p>Python</p>
+        <div class="code-progress"><div class="code-fill" data-width="90%"></div></div>
+        <p>C</p>
+        <div class="code-progress"><div class="code-fill" data-width="75%"></div></div>
+        <p>Java</p>
+        <div class="code-progress"><div class="code-fill" data-width="85%"></div></div>
+      </div>
+    </div>
+  </section>
+
+<section id="contact" class="contact" data-aos="fade-up">
+  <h2>Contact</h2>
+  <div class="contact-container">
+    <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
+      <i class="fas fa-envelope"></i>
+      <p><a href="mailto:rddpriya2005@gmail.com">rddpriya2005@gmail.com</a></p>
+    </div>
+    <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
+      <i class="fas fa-phone"></i>
+      <p><a href="tel:+919345725472">+91 93457 25472</a></p>
+    </div>
+    <div class="contact-item" data-aos="fade-up" data-aos-delay="300">
+      <i class="fab fa-linkedin"></i>
+      <p><a href="https://www.linkedin.com/in/dharshini-priya-8660bb290" target="_blank">LinkedIn</a></p>
+    </div>
+    <div class="contact-item" data-aos="fade-up" data-aos-delay="400">
+      <i class="fab fa-github"></i>
+      <p><a href="https://github.com/dharsh-RD08/gituphtml" target="_blank">GitHub</a></p>
+    </div>
+  </div>
+</section>
+
+
+  <footer>
+    <p>&copy; 2025 Logeshwara. All rights reserved.</p>
+  </footer>
+
+<div class="animated-bg"></div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+AOS.init({
+  duration: 1500,
+  easing: 'ease-in-out',
+  once: true
+});
+
+
+
+    window.addEventListener("load", () => {
+      document.getElementById("preloader").style.display = "none";
+
+      document.querySelectorAll('.progress-fill, .code-fill').forEach(fill => {
+        fill.style.width = fill.dataset.width;
+      });
+    });
+</script>
+
+
+</body>
+</html>
